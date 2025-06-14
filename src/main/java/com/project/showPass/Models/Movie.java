@@ -1,4 +1,4 @@
-package com.project.showPass.Models;
+package com.project.showPass.models;
 
 import java.time.LocalDate;
 
