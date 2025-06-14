@@ -1,4 +1,4 @@
-package com.project.showPass.controller;
+package com.project.showPass.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
