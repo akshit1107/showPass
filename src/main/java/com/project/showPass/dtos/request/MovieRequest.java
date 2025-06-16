@@ -13,8 +13,8 @@ import lombok.Setter;
 @Setter
 public class MovieRequest {
 
-    private String movie_name;
-    private LocalDate release_date;
+    private String movieName;
+    private LocalDate releaseDate;
     private Double duration; // Duration in minutes
     private Language language; // Use enum Language
     private Genre genre; // Use enum Genre

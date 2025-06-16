@@ -15,13 +15,13 @@ public class MovieService {
 
     public String addMovie(MovieRequest movie) {
         // Validate the movie object (e.g., check for null values, valid genres, etc.)
-        if (movie == null || movie.getMovie_name() == null || movie.getGenre() == null) {
+        if (movie == null || movie.getMovieName() == null || movie.getGenre() == null) {
             return "Invalid movie data!";
         }
         // Convert MovieRequest to Movie entity
         Movie movieEntity = new Movie();
-        movieEntity.setMovie_name(movie.getMovie_name());
-        movieEntity.setRelease_date(movie.getRelease_date());
+        movieEntity.setMovieName(movie.getMovieName());
+        movieEntity.setReleaseDate(movie.getReleaseDate());
         movieEntity.setDuration(movie.getDuration());
         movieEntity.setLanguage(movie.getLanguage());
         movieEntity.setGenre(movie.getGenre());

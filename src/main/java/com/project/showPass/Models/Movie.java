@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import com.project.showPass.enums.Genre;
 import com.project.showPass.enums.Language;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -27,10 +28,13 @@ public class Movie {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer movie_id;
+    @Column(name = "movie_id")
+    private Integer movieId;
 
-    private String movie_name;
+    @Column(name = "movie_name", nullable = false, unique = true)
+    private String movieName;
 
+    @Column(name = "duration", nullable = false)
     private double duration; // in minutes
 
     @Enumerated(EnumType.STRING) //EnumType.ORDINAL stores the enum as an integer
@@ -39,7 +43,8 @@ public class Movie {
     @Enumerated(EnumType.STRING)
     private Language language;
 
-    private LocalDate release_date;
+    @Column(name = "release_date")
+    private LocalDate releaseDate;
 
     private double rating;
 }
