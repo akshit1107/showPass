@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.showPass.dtos.request.AddTheaterRequest;
+import com.project.showPass.dtos.request.AddTheaterSeatsRequest;
 import com.project.showPass.services.TheaterService;
 
 @RestController
@@ -19,6 +20,11 @@ public class TheaterController {
     @PostMapping("/addTheater")
     public String addTheater(@RequestBody AddTheaterRequest addTheaterRequest) {
         return theaterService.addTheater(addTheaterRequest);
+    }
+
+    @PostMapping("/addTheaterSeats")
+    public String addTheaterSeats(@RequestBody AddTheaterSeatsRequest addTheaterSeatsRequest) {
+        return theaterService.addTheaterSeats(addTheaterSeatsRequest);
     }
 
 }
