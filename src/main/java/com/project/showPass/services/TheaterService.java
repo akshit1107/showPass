@@ -47,6 +47,8 @@ public class TheaterService {
             throw new RuntimeException("Theater with ID " + addTheaterSeatsRequest.getTheaterId() + " not found.");
         }
 
+        Theater t = theater.get();
+
         int numClassSeats = addTheaterSeatsRequest.getNoOfClassicSeats();
         int numPremiumSeats = addTheaterSeatsRequest.getNoOfPremiumSeats();
         int numLuxurySeats = addTheaterSeatsRequest.getNoOfLuxurySeats();
@@ -104,7 +106,10 @@ public class TheaterService {
                 }
             }
         }
-        theaterSeatRepository.saveAll(allSeats);
+        t.setTheaterSeatList(allSeats);
+//         theaterSeatRepository.saveAll(allSeats);
+        //theater seat will auto matically be saved because of CascadeType.ALL in Theater class
+        theaterRepository.save(t);
 
         return "Seats added successfully for Theater ID: " + addTheaterSeatsRequest.getTheaterId();
     }
