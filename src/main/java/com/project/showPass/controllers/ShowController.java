@@ -1,6 +1,7 @@
 package com.project.showPass.controllers;
 
 import com.project.showPass.dtos.request.AddShowRequest;
+import com.project.showPass.dtos.request.AddShowSeatsRequest;
 import com.project.showPass.services.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,12 @@ public class ShowController {
 
     @PostMapping("addShow")
     public String addShow(@RequestBody AddShowRequest addShowRequest) {
-        showService.addShow(addShowRequest);
-        return "Show added successfully.";
+        return showService.addShow(addShowRequest);
     }
+
+    @PostMapping("addShowSeats")
+    public String addShowSeats(@RequestBody AddShowSeatsRequest addShowSeatsRequest) {
+        return showService.addShowSeats(addShowSeatsRequest);
+    }
+
 }

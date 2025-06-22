@@ -13,7 +13,7 @@ import com.project.showPass.enums.SeatType;
 import com.project.showPass.models.Theater;
 import com.project.showPass.models.TheaterSeat;
 import com.project.showPass.repositories.TheaterRepository;
-import com.project.showPass.repositories.TheaterSeatRepository;
+// import com.project.showPass.repositories.TheaterSeatRepository;
 
 @Service
 public class TheaterService {
@@ -21,8 +21,8 @@ public class TheaterService {
     @Autowired
     private TheaterRepository theaterRepository;
 
-    @Autowired
-    private TheaterSeatRepository theaterSeatRepository;
+    // @Autowired
+    // private TheaterSeatRepository theaterSeatRepository;
 
     public String addTheater(AddTheaterRequest addTheaterRequest) {
         // Theater theater = new Theater();

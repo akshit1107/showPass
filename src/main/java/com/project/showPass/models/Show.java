@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -29,10 +28,10 @@ public class Show {
     private LocalTime showTime;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "movie_id", nullable = false)
     private Movie movie;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "theater_id", nullable = false)
     private Theater theater;
 }
