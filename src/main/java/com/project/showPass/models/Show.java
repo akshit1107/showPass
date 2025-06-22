@@ -8,9 +8,9 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "shows")
-//@Getter
-//@Setter
-@Data
+@Getter
+@Setter
+// @Data
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
